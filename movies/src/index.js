@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
-import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
+import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         </li>
       </ul>
       <Routes>
-        <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
+        <Route exact path="/movies/favorites" element={<FavoriteMoviesPage />} />
         <Route path="/movies/:id" element={<MoviePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={ <Navigate to="/" /> } />
