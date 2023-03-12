@@ -41,6 +41,7 @@ export default function MovieCard(props) {
         }
       />
 
+
       <CardMedia
         sx={{ height: 500 }}
         image={
@@ -69,11 +70,12 @@ export default function MovieCard(props) {
       <IconButton aria-label="add to favorites" onClick={handleAddToFavorite}>
         <FavoriteIcon color="primary" fontSize="large" />
     </IconButton>
-        <Link to={`/movies/${movie.id}`}>
+    <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
         </Link>
+
 
       </CardActions>
     </Card>

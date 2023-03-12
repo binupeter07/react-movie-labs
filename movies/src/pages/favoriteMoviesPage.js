@@ -8,7 +8,7 @@ const FavoriteMoviesPage = (props) => {
 
   return (
     <PageTemplate
-      title="favorite Movies"
+      title="Favourite Movies"
       movies={movies}
       selectFavorite={toDo}
     />
