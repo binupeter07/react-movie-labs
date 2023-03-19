@@ -4,6 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import AddToPlaylistIcon from '../components/cardIcons/addToPlaylist'
 
 const Upcoming = (props) => {
 
@@ -22,15 +23,25 @@ const Upcoming = (props) => {
   const favorites = movies.filter(m => m.favorite)
   localStorage.setItem('favorites', JSON.stringify(favorites))
   const addToFavorites = (movieId) => true 
+  const addToPlaylist = (movieId) => true 
 
+
+const toDo = () => true;
   return (
     <PageTemplate
       title="Upcoming Movies"
       movies={movies}
       action={(movie) => {
-        return <AddToFavoritesIcon movie={movie} />
+        return(
+          <>
+           <AddToFavoritesIcon movie={movie} />
+         <AddToPlaylistIcon movie={movie} />  
+         </>
+        )
       }}
+
     />
+    
 );
     }
 
