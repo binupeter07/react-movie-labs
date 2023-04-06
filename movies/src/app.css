@@ -4,6 +4,8 @@ body{
   background-color: black;
 }
 
+/* Movie Card */
+
   div.movieCard  {
     width: 100%;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -58,7 +60,10 @@ body{
     padding: 0 30px 10px;
   }
 
-
+  /* Heading */
+.heading{
+  color: white;
+}
 
   /* Pagination */
 
@@ -133,6 +138,7 @@ body{
     width: 100%;
   }
   
+  /* All shows */
   
   div.allShows {
     display: flex;

@@ -24,7 +24,7 @@ const SimilarMovies = () => {
 {
         similarmovies&&
         <>
-        <h1 className="heading">Crew</h1>
+        <h1 className="heading">Similar Movies</h1>
         <div className="crew">
           <Swiper
             modules={[Navigation,Pagination]}
