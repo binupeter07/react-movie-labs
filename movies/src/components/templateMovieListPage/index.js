@@ -27,15 +27,18 @@ function MovieListPageTemplate({ movies, title, action }) {
       <Grid item xs={12}>
         <Header title={title} />
       </Grid>
-      <Grid item container spacing={5}>
-        <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
+      <Grid item container>
+        <Grid key="find" item xs={12} sm={12} md={12} lg={12} xl={12}>
           <FilterCard
             onUserInput={handleChange}
             titleFilter={nameFilter}
             genreFilter={genreFilter}
           />
         </Grid>
+        <div className="allShows">
         <MovieList action={action} movies={displayedMovies}></MovieList>
+
+      </div>
       </Grid>
     </Grid>
   );

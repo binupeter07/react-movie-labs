@@ -1,0 +1,229 @@
+
+
+body{
+  background-color: black;
+}
+
+  div.movieCard  {
+    width: 100%;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  div.movieCard:hover div.imageContainer img {
+    transform: scale(1.1);
+  }
+  div.movieCard h1.title {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 10px;
+    min-height: 50px;
+    color: #aaa;
+    font-weight: normal;
+  }
+  div.movieCard div.imageContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+  div.movieCard div.imageContainer img {
+    width: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+    height: 450px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  div.movieCard div.metaData {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  div.movieCard div.metaData div.ratings, div.movieCard div.metaData div.release_date {
+    display: flex;
+    align-items: center;
+  }
+  div.movieCard div.metaData div.ratings svg, div.movieCard div.metaData div.release_date svg {
+    color: #aaa !important;
+  }
+  div.movieCard div.metaData div.ratings span, div.movieCard div.metaData div.release_date span {
+    line-height: 0;
+    margin-left: 6px;
+    margin-top: 3px;
+    color: #aaa;
+  }
+  div.movieCard div.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 10px;
+  }
+
+
+
+  /* Pagination */
+
+  div.gallery .swiper-pagination .swiper-pagination-bullet {
+    background: #4b4b4b !important;
+    opacity: 1 !important;
+  }
+  div.gallery .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #007aff !important;
+  }
+  div.gallery img {
+    width: 100%;
+    height: 400px;
+    display: block;
+  }
+
+  
+  div.casts, div.crew {
+    padding-bottom: 30px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+  div.casts h6, div.crew h6 {
+    font-size: 20px;
+    margin-top: 6px;
+    color: #aaa;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+ 
+  
+  
+    div.casts .swiper, div.crew .swiper {
+      height: 500px;
+    }
+  
+  div.casts .swiper-pagination, div.crew .swiper-pagination {
+    display: none;
+  }
+  @media all and (min-width: 980px) {
+    div.casts .swiper-pagination, div.crew .swiper-pagination {
+      display: block;
+    }
+  }
+  div.casts .swiper-pagination .swiper-pagination-bullet, div.crew .swiper-pagination .swiper-pagination-bullet {
+    background: #4b4b4b !important;
+    opacity: 1 !important;
+  }
+  div.casts .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, div.crew .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #007aff !important;
+  }
+  div.casts img, div.crew img {
+    width: 100%;
+    display: block;
+  }
+  @media all and (min-width: 1200px) {
+    div.casts img, div.crew img {
+      height: 400px;
+    }
+  }
+  
+  div.posterImage {
+    width: 30%;
+    margin: 20px auto;
+  }
+  div.posterImage div.imageContainer {
+    width: 250px;
+    margin: 0 auto;
+  }
+  div.posterImage div.imageContainer img {
+    display: block;
+    width: 100%;
+  }
+  
+  
+  div.allShows {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  div.allShows div.item {
+    width: 19%;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  div.allShows div.item:nth-child(5n) {
+    margin-right: 0;
+  }
+  div.allShows div.item:last-child {
+    margin-right: 0;
+  }
+  @media all and (max-width: 1400px) {
+    div.allShows div.item {
+      width: 23%;
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(5n) {
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+  @media all and (max-width: 1200px) {
+    div.allShows div.item {
+      width: 31.2%;
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(4n) {
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  @media all and (max-width: 980px) {
+    div.allShows div.item {
+      width: 48%;
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(3n) {
+      margin-right: 20px;
+    }
+    div.allShows div.item:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  @media all and (max-width: 640px) {
+    div.allShows div.item {
+      width: 100%;
+      margin-right: 0;
+    }
+    div.allShows div.item:nth-child(3n) {
+      margin-right: 0;
+    }
+    div.allShows div.item:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+
+ div.searchPage {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+  div.searchPage div.filterContainer {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+  div.searchPage div.filterContainer h1 {
+    color: #aaa;
+    font-size: 20px;
+  }
+  div.searchPage div.shows {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div.searchPage div.shows div.item {
+    width: 19%;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  div.searchPage div.shows div.item:nth-child(5n) {
+    margin-right: 0;
+  }
+  div.searchPage div.shows div.item:last-child {
+    margin-right: 0;
+  } 

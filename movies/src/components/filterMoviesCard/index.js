@@ -1,19 +1,14 @@
-import React, {useState, useEffect}  from "react";
+import React, {useState}  from "react";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg'
 import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
-
+import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 const formControl = 
   {
@@ -25,6 +20,12 @@ const formControl =
 export default function FilterMoviesCard(props) {
 
   const { data, error, isLoading, isError } = useQuery("genres", getGenres);
+  const [value,setValue] = useState("")
+
+  const navigate = useNavigate()
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   if (isLoading) {
     return <Spinner />;
@@ -40,7 +41,8 @@ export default function FilterMoviesCard(props) {
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
-    props.onUserInput(type, value); // NEW
+    // props.onUserInput(type, value); // NEW
+    setValue(value)
   };
 
   const handleTextChange = (e, props) => {
@@ -50,6 +52,12 @@ export default function FilterMoviesCard(props) {
   const handleGenreChange = (e) => {
     handleChange(e, "genre", e.target.value);
   };
+
+  const searchHandler = () =>{
+    if(value){
+      navigate(`/search?query=${value}`)
+    }
+  }
 
 
   
@@ -71,12 +79,16 @@ export default function FilterMoviesCard(props) {
       label="Search field"
       type="search"
       variant="filled"
-      value={props.titleFilter}
+      value={value || ""}
       onChange={handleTextChange}
     />
 
+<Button  sx={{marginTop:"15px"}} onClick={()=>searchHandler()} variant="contained" startIcon={<SearchIcon />}>
+  Search
+</Button>
 
-        <FormControl sx={{...formControl}}>
+
+        {/* <FormControl sx={{...formControl}}>
           <InputLabel id="genre-label">Genre</InputLabel>
             <Select
               labelId="genre-label"
@@ -94,9 +106,9 @@ export default function FilterMoviesCard(props) {
               );
             })}
           </Select>
-        </FormControl>
+        </FormControl> */}
       </CardContent>
-      <CardMedia
+      {/* <CardMedia
         sx={{ height: 300 }}
         image={img}
         title="Filter"
@@ -107,7 +119,7 @@ export default function FilterMoviesCard(props) {
           Filter the movies.
           <br />
         </Typography>
-      </CardContent>
+      </CardContent> */}
     </Card>
   );
 }

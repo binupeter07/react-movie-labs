@@ -23,7 +23,11 @@ const Upcoming = (props) => {
   const favorites = movies.filter(m => m.favorite)
   localStorage.setItem('favorites', JSON.stringify(favorites))
   const addToFavorites = (movieId) => true 
+
+  const playlist = movies.filter(m => m.playlist)
+  localStorage.setItem('favorites', JSON.stringify(favorites))
   const addToPlaylist = (movieId) => true 
+  
 
 
 const toDo = () => true;
